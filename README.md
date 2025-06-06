@@ -2,7 +2,7 @@
 
 This is the codes and dataset for RecGPT proposed in the paper **RecGPT: A Foundation Model for Sequential Recommendation**.
 
-<img src="./figures/recgpt.pdf" style="zoom:100%;" />
+<img src="./figures/recgpt.png" style="zoom:100%;" />
 
 ### Introduction
 
