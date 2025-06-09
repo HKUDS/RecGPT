@@ -1,6 +1,6 @@
 # RecGPT: A Foundation Model for Sequential Recommendation
 
-This is the codes and dataset for RecGPT proposed in the paper **RecGPT: A Foundation Model for Sequential Recommendation**.
+This is the codes and dataset proposed in the paper **[RecGPT: A Foundation Model for Sequential Recommendation](https://arxiv.org/abs/2506.06270)**.
 
 <img src="./figures/recgpt.png" style="zoom:100%;" />
 
