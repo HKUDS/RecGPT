@@ -177,3 +177,13 @@ We also provide some code and scripts for processing the datasets in the directo
 ## 🌟 Citation
 
 If you find this work helpful to your research, please kindly consider citing our paper.
+
+```
+@article{jiang2025recgpt,
+  title={RecGPT: A Foundation Model for Sequential Recommendation},
+  author={Jiang, Yangqin and Ren, Xubin and Xia, Lianghao and Luo, Da and Lin, Kangyi and Huang, Chao},
+  journal={arXiv preprint arXiv:2506.06270},
+  year={2025}
+}
+```
+
