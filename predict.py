@@ -32,7 +32,7 @@ def main():
 	args.n_embed = 768
 	args.initializer_range = 0.02
 
-	data_path = os.path.join('./data/', args.dataset)
+	data_path = os.path.join('./data/test', args.dataset)
 
 	if args.cold == True:
 		with open(data_path + '/cold_test.pkl', "rb") as f:
