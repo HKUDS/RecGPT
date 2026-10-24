@@ -18,6 +18,10 @@ from ae_trainer import *
 
 import time
 
+def save_checkpoint(accelerator, model, path):
+	if accelerator.is_main_process:
+		torch.save(accelerator.unwrap_model(model).state_dict(), path)
+
 def main():
 
 	dataloader_config = DataLoaderConfiguration(dispatch_batches=True)
@@ -119,43 +123,43 @@ def main():
 			accelerator.wait_for_everyone()
 
 			if counter == flag_10 and epoch == 0:
-				torch.save(accelerator.unwrap_model(model).state_dict(), './ckpt/layer_' + str(args.tf_layer) + '_model_01.pt')
+				save_checkpoint(accelerator, model, './ckpt/layer_' + str(args.tf_layer) + '_model_01.pt')
 				accelerator.print("Save ckpt for 0.1 data!")
 
 			if counter == flag_20 and epoch == 0:
-				torch.save(accelerator.unwrap_model(model).state_dict(), './ckpt/layer_' + str(args.tf_layer) + '_model_02.pt')
+				save_checkpoint(accelerator, model, './ckpt/layer_' + str(args.tf_layer) + '_model_02.pt')
 				accelerator.print("Save ckpt for 0.2 data!")
 
 			if counter == flag_30 and epoch == 0:
-				torch.save(accelerator.unwrap_model(model).state_dict(), './ckpt/layer_' + str(args.tf_layer) + '_model_03.pt')
+				save_checkpoint(accelerator, model, './ckpt/layer_' + str(args.tf_layer) + '_model_03.pt')
 				accelerator.print("Save ckpt for 0.3 data!")
 
 			if counter == flag_40 and epoch == 0:
-				torch.save(accelerator.unwrap_model(model).state_dict(), './ckpt/layer_' + str(args.tf_layer) + '_model_04.pt')
+				save_checkpoint(accelerator, model, './ckpt/layer_' + str(args.tf_layer) + '_model_04.pt')
 				accelerator.print("Save ckpt for 0.4 data!")
 
 			if counter == flag_50 and epoch == 0:
-				torch.save(accelerator.unwrap_model(model).state_dict(), './ckpt/layer_' + str(args.tf_layer) + '_model_05.pt')
+				save_checkpoint(accelerator, model, './ckpt/layer_' + str(args.tf_layer) + '_model_05.pt')
 				accelerator.print("Save ckpt for 0.5 data!")
 
 			if counter == flag_60 and epoch == 0:
-				torch.save(accelerator.unwrap_model(model).state_dict(), './ckpt/layer_' + str(args.tf_layer) + '_model_06.pt')
+				save_checkpoint(accelerator, model, './ckpt/layer_' + str(args.tf_layer) + '_model_06.pt')
 				accelerator.print("Save ckpt for 0.6 data!")
 
 			if counter == flag_70 and epoch == 0:
-				torch.save(accelerator.unwrap_model(model).state_dict(), './ckpt/layer_' + str(args.tf_layer) + '_model_07.pt')
+				save_checkpoint(accelerator, model, './ckpt/layer_' + str(args.tf_layer) + '_model_07.pt')
 				accelerator.print("Save ckpt for 0.7 data!")
 
 			if counter == flag_80 and epoch == 0:
-				torch.save(accelerator.unwrap_model(model).state_dict(), './ckpt/layer_' + str(args.tf_layer) + '_model_08.pt')
+				save_checkpoint(accelerator, model, './ckpt/layer_' + str(args.tf_layer) + '_model_08.pt')
 				accelerator.print("Save ckpt for 0.8 data!")
 
 			if counter == flag_90 and epoch == 0:
-				torch.save(accelerator.unwrap_model(model).state_dict(), './ckpt/layer_' + str(args.tf_layer) + '_model_09.pt')
+				save_checkpoint(accelerator, model, './ckpt/layer_' + str(args.tf_layer) + '_model_09.pt')
 				accelerator.print("Save ckpt for 0.9 data!")
 
 			if counter == flag_100 and epoch == 0:
-				torch.save(accelerator.unwrap_model(model).state_dict(), './ckpt/layer_' + str(args.tf_layer) + '_model_10.pt')
+				save_checkpoint(accelerator, model, './ckpt/layer_' + str(args.tf_layer) + '_model_10.pt')
 				accelerator.print("Save ckpt for 1.0 data!")
 
 			if counter % 100 == 1:
@@ -165,7 +169,7 @@ def main():
 				accelerator.print(f"Current {counter} - Rec Loss: {(train_rec_loss / counter):.4f} - Time: {time.time() - last_time} s")
 				last_time = time.time()
 
-				torch.save(accelerator.unwrap_model(model).state_dict(), './ckpt/layer_' + str(args.tf_layer) + '_model_e' + str(epoch) + '.pt')
+				save_checkpoint(accelerator, model, './ckpt/layer_' + str(args.tf_layer) + '_model_e' + str(epoch) + '.pt')
 				
 				accelerator.print("Save ckpt!")
 
