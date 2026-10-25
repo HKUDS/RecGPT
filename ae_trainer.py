@@ -110,9 +110,9 @@ def main():
 	args.n_embed = 768
 
 	with open('./data/pre_train/all_item_text_embeddings.npy', 'rb') as f:
-		item_text_mebddings = torch.tensor(np.load(f)).float()
+		item_text_embeddings = torch.tensor(np.load(f)).float()
 
-	args.num_items = item_text_mebddings.shape[0]
+	args.num_items = item_text_embeddings.shape[0]
 
 	print("item number: ", args.num_items)
 
